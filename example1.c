@@ -11,7 +11,7 @@ int main ()
     const long page_size = sysconf(_SC_PAGESIZE);
 
     unsigned long addr = (unsigned long) &x & ~(page_size - 1);
-    printf ("%original value of x: %d\n", x);
+    printf ("original value of x: %d\n", x);
     printf ("address of x: %p\n", &x);
     printf ("page rounded address of x: 0x%x\n", addr);
 
