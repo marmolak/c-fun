@@ -54,6 +54,9 @@ UD2 Undefined Instruction
 Generates an invalid opcode. This instruction is provided for software testing
 to explicitly generate an invalid opcode. The opcode for this instruction is
 reserved for this purpose.
+
+This will be patched in gcc 4.10
+https://gcc.gnu.org/ml/gcc-patches/2014-07/msg01626.html
 */
 
 #include <stdio.h>
