@@ -30,7 +30,7 @@ __mulvdi3:
 
 GCC: How it works:
 rsi register are multiplied by rax.
-Result are stored in rax. Then aritmethic right shift happen on rsi and we gain
+Result are stored in rax. Then arithmetic right shift happen on rsi and we gain
 most significant bit. Then rsi are compared with rdx (which contain 0) and if result
 aren't equal then it call abort.
 
