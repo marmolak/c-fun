@@ -26,7 +26,8 @@ __mulvdi3:
    0x0000000000400634 <+20>:	push   %rax
    0x0000000000400635 <+21>:	callq  0x400480 <abort@plt>
 ...
-32-bit signed integer is promoted to signed long. Then overflow can happen.
+32-bit signed integer is promoted to signed long. So the overflow cannot happen,
+but the result is incorrect in this case.
 
 GCC: How it works:
 The rsi register is multiplied by rax.
