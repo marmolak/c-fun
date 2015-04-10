@@ -29,10 +29,10 @@ __mulvdi3:
 32-bit signed integer is promoted to signed long. Then overflow can happen.
 
 GCC: How it works:
-rsi register are multiplied by rax.
-Result are stored in rax. Then aritmethic right shift happen on rsi and we gain
-most significant bit. Then rsi are compared with rdx (which contain 0) and if result
-aren't equal then it call abort.
+The rsi register is multiplied by rax.
+The result is stored in rax. Then an arithmetic right shift happens on rsi and we gain
+the most significant bit. Then rsi is compared to rdx (which contains 0) and if values
+aren't equal then it calls abort().
 
 clang on fedora 20:
 clang version 3.4 (tags/RELEASE_34/final)
@@ -56,9 +56,9 @@ main:
 Clang uses 32-bit signet arithmetics.
 
 Clang: How it works.
-eax and ecx (both are 32 bit registers) are multiplied and 1 is set to dl if
-overflow flag are set.
-It's really better to understand than GCC code.
+The eax and ecx (both are 32-bit registers) are multiplied and a 1 is stored in dl if
+the overflow flag is set.
+This code is far easier to understand than the GCC code.
 
 NOTE (from wiki):
 UD2 Undefined Instruction
