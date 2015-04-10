@@ -1,4 +1,4 @@
-/* Compile this with -ftrapv on gcc < 4.10 or clang */
+/* Compile the following code using gcc < 4.10 or clang. */
 
 /* 
 GCC will produce:
