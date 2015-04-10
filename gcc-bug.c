@@ -4,7 +4,7 @@
 GCC will produce:
 gcc version 4.8.3 20140624 (Red Hat 4.8.3-1) (GCC)
 
-gcc -ggdb3 -o gcc-bug -ftrapv gcc-bug.c
+gcc -Wall -Wextra -ggdb3 -o gcc-bug -ftrapv gcc-bug.c
 
 main:
 ...
@@ -78,6 +78,9 @@ https://gcc.gnu.org/ml/gcc-patches/2014-07/msg01626.html
 int main(int argc, char **argv)
 {
     signed int x = INT_MAX * atoi(argv[1]);
+
+    (void) argc; /* Unused */
+
     printf ("%d\nsizeof int: %lu\n sizeof long: %lu\n", x, sizeof(int), sizeof(long));
 
     return 0;
